@@ -1,0 +1,24 @@
+﻿@{
+    ViewData["Title"] = "Home Page";
+}
+
+<div class="text-center">
+    <h1 class="display-4">Welcome</h1>
+    <div class="row">
+        <div class="col-md-6">
+            <form method="get" class="container" asp-controller="home" asp-action="GetIpAddress"> 
+                <label for="fname">Click to get your IP</label>
+                <input type="submit" value="Submit">            
+            </form>  
+        </div>
+        
+        <div class="col-md-6">
+            <form method="get" class="container" asp-controller="home" asp-action="GetUserAgent"> 
+                <label for="fname">Click to show user agent</label>
+                <input type="submit" value="Submit">            
+            </form>  
+        </div>
+    </div>
+    
+    <p>Learn about <a href="https://docs.microsoft.com/aspnet/core">building Web apps with ASP.NET Core</a>.</p>
+</div>

@@ -1,0 +1,91 @@
+@model IEnumerable<Models.User>
+
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <title>Usuarios</title>
+</head>
+<body>
+<div class="row">
+    <h1 class="mb-5">Usuarios</h1>
+    <div>
+        <input id="textSearch" placeholder="Buscar" class="input-group-sm" type="text">
+    </div>
+    <table class="table table-striped table-hover">
+        <thead>
+        <tr>
+            <th>@Html.DisplayNameFor(Model => Model.name)</th>
+            <th>@Html.DisplayNameFor(Model => Model.email)</th>
+            <th>@Html.DisplayNameFor(Model => Model.username)</th>
+            <th>@Html.DisplayNameFor(Model => Model.phone)</th>
+            <th>@Html.DisplayNameFor(Model => Model.website)</th>
+            <th>@Html.DisplayNameFor(Model => Model.address.city)</th>
+            <th>@Html.DisplayNameFor(Model => Model.address.street)</th>
+            <th>@Html.DisplayNameFor(Model => Model.address.suite)</th>
+            <th>@Html.DisplayNameFor(Model => Model.address.zipcode)</th>
+            <th>@Html.DisplayNameFor(Model => Model.company.name)</th>
+        </tr>
+        </thead>
+        <tbody>
+        @foreach (var data in Model)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(Model => data.name)
+                </td>
+                <td>
+                    @Html.DisplayFor(Model => data.email)
+                </td>
+                <td>
+                    @Html.DisplayFor(Model => data.username)
+                </td>
+                <td>
+                    @Html.DisplayFor(Model => data.phone)
+                </td>
+                <td>
+                    @Html.DisplayFor(Model => data.website)
+                </td>
+                <td>
+                    @Html.DisplayFor(Model => data.address.city)
+                </td>
+                <td>
+                    @Html.DisplayFor(Model => data.address.street)
+                </td>
+                <td>
+                    @Html.DisplayFor(Model => data.address.suite)
+                </td>
+                <td>
+                    @Html.DisplayFor(Model => data.address.zipcode)
+                </td>
+                <td>
+                    @Html.DisplayFor(Model => data.company.name)
+                </td>
+
+            </tr>
+        }
+        </tbody>
+    </table>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script >
+        $("#textSearch").on("keyup", function() {
+          var text = $(this).val();
+          $("table tr").each(function (result){
+              if (result !== 0){
+                  var id = $(this).find("td:nth-child(1)").text();
+                    if (id.indexOf(text) !== 0 && id.toLowerCase().indexOf(text.toLowerCase()) < 0){
+                        $(this).hide();
+                    } else {
+                        $(this).show();
+                    }
+              }
+          })
+        })
+    </script>
+</div>
+</body>
+</html>

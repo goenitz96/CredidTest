@@ -1,0 +1,67 @@
+@model System.Collections.Generic.IEnumerable<Models.Comment>
+
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <title>Comments</title>
+</head>
+<body>
+<div class="container row">
+    <div class="row">
+        <input type="text" id="textSearch" placeholder="Buscar....">
+    </div>
+    <table>
+        <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(Model => Model.name)
+            </th>
+            <th>
+                @Html.DisplayNameFor(Model => Model.email)
+            </th>
+            <th>
+                @Html.DisplayNameFor(Model => Model.body)
+            </th>
+        </tr>
+        </thead>
+        <tbody>
+        @foreach (var data in Model)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(Model => data.name)
+                </td>
+                <td>
+                    @Html.DisplayFor(Model => data.email)
+                </td>
+                <td>
+                    @Html.DisplayFor(Model => data.body)
+                </td>
+            </tr>
+        }
+        </tbody>
+    </table>
+</div>
+</body>
+ <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script >
+        $("#textSearch").on("keyup", function() {
+          let text = $(this).val();
+          $("table tr").each(function (result){
+              if (result !== 0){
+                  let title = $(this).find("td:nth-child(2)").text();
+                    if (title.indexOf(text) !== 0 && title.toLowerCase().indexOf(text.toLowerCase()) < 0){
+                        $(this).hide();
+                    } else {
+                        $(this).show();
+                    }
+              }
+          })
+        })
+    </script>
+</html>

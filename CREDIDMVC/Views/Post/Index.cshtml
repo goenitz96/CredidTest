@@ -1,0 +1,60 @@
+@using System.Globalization
+@model System.Collections.Generic.IEnumerable<Models.Post>
+
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <title>Posts</title>
+</head>
+<body>
+<div class="container row">
+    <div>
+        <input id="textSearch" placeholder="Buscar" type="text">
+    </div>
+    <table class="table table-striped table-hover">
+        <thead>
+        <tr>
+            <th>@Html.DisplayNameFor(Model => Model.title)</th>
+            <th>@Html.DisplayNameFor(Model => Model.body)</th>
+        </tr>
+        </thead>
+        <tbody>
+        @foreach (var data in Model)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(Model => data.title)
+                </td>
+                <td>
+                    @Html.DisplayFor(Model => data.body)
+                </td>
+            </tr>
+        }
+        </tbody>
+    </table>
+</div>
+</body>
+ <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script >
+        $("#textSearch").on("keyup", function() {
+          let text = $(this).val();
+          $("table tr").each(function (result){
+              if (result !== 0){
+                  let title = $(this).find("td:nth-child(1)").text();
+                  let body = $(this).find("td:nth-child(2)").text();
+                    if (title.indexOf(text) !== 0 && title.toLowerCase().indexOf(text.toLowerCase()) < 0
+                    || body.indexOf(text) !== 0 && body.toLowerCase().indexOf(text.toLowerCase()) < 0){
+                        $(this).hide();
+                    } else {
+                        $(this).show();
+                    }
+              }
+          })
+        })
+    </script>
+</html>

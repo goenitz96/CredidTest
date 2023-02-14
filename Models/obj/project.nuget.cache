@@ -1,0 +1,12 @@
+{
+  "version": 2,
+  "dgSpecHash": "Gojon2OLYqnJo9J5b7BFXsP3qJzqauEE8E9RTQ/IMs1TFScsuJkOTJrmOQ2L6IyaHcrwMFwZzvEAaaTGALhNGA==",
+  "success": true,
+  "projectFilePath": "/Users/omegajohn/Documents/C#/CREDID/Models/Models.csproj",
+  "expectedPackageFiles": [
+    "/Users/omegajohn/.nuget/packages/bootstrap/5.2.3/bootstrap.5.2.3.nupkg.sha512",
+    "/Users/omegajohn/.nuget/packages/jetbrains.annotations/2022.3.1/jetbrains.annotations.2022.3.1.nupkg.sha512",
+    "/Users/omegajohn/.nuget/packages/restsharp/108.0.3/restsharp.108.0.3.nupkg.sha512"
+  ],
+  "logs": []
+}

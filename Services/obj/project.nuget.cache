@@ -1,0 +1,16 @@
+{
+  "version": 2,
+  "dgSpecHash": "fUnbhc/Tx8yudsRgESwGSjOY8ph7lCHSgJOPuCSmVhDp8FZWg8MeMV1/jA5vjiC3BE05OiqPFyfqlmT5lgbbwA==",
+  "success": true,
+  "projectFilePath": "/Users/omegajohn/Documents/C#/CREDID/Services/Services.csproj",
+  "expectedPackageFiles": [
+    "/Users/omegajohn/.nuget/packages/bootstrap/5.2.3/bootstrap.5.2.3.nupkg.sha512",
+    "/Users/omegajohn/.nuget/packages/jetbrains.annotations/2022.3.1/jetbrains.annotations.2022.3.1.nupkg.sha512",
+    "/Users/omegajohn/.nuget/packages/microsoft.extensions.configuration.abstractions/7.0.0/microsoft.extensions.configuration.abstractions.7.0.0.nupkg.sha512",
+    "/Users/omegajohn/.nuget/packages/microsoft.extensions.primitives/7.0.0/microsoft.extensions.primitives.7.0.0.nupkg.sha512",
+    "/Users/omegajohn/.nuget/packages/newtonsoft.json/13.0.3-beta1/newtonsoft.json.13.0.3-beta1.nupkg.sha512",
+    "/Users/omegajohn/.nuget/packages/restsharp/108.0.3/restsharp.108.0.3.nupkg.sha512",
+    "/Users/omegajohn/.nuget/packages/system.runtime.compilerservices.unsafe/6.0.0/system.runtime.compilerservices.unsafe.6.0.0.nupkg.sha512"
+  ],
+  "logs": []
+}

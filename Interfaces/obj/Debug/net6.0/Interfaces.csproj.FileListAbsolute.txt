@@ -1,0 +1,15 @@
+/Users/omegajohn/Documents/C#/CREDID/Interfaces/bin/Debug/net6.0/Interfaces.deps.json
+/Users/omegajohn/Documents/C#/CREDID/Interfaces/bin/Debug/net6.0/Interfaces.dll
+/Users/omegajohn/Documents/C#/CREDID/Interfaces/bin/Debug/net6.0/Interfaces.pdb
+/Users/omegajohn/Documents/C#/CREDID/Interfaces/bin/Debug/net6.0/Models.dll
+/Users/omegajohn/Documents/C#/CREDID/Interfaces/bin/Debug/net6.0/Models.pdb
+/Users/omegajohn/Documents/C#/CREDID/Interfaces/obj/Debug/net6.0/Interfaces.csproj.AssemblyReference.cache
+/Users/omegajohn/Documents/C#/CREDID/Interfaces/obj/Debug/net6.0/Interfaces.GeneratedMSBuildEditorConfig.editorconfig
+/Users/omegajohn/Documents/C#/CREDID/Interfaces/obj/Debug/net6.0/Interfaces.AssemblyInfoInputs.cache
+/Users/omegajohn/Documents/C#/CREDID/Interfaces/obj/Debug/net6.0/Interfaces.AssemblyInfo.cs
+/Users/omegajohn/Documents/C#/CREDID/Interfaces/obj/Debug/net6.0/Interfaces.csproj.CoreCompileInputs.cache
+/Users/omegajohn/Documents/C#/CREDID/Interfaces/obj/Debug/net6.0/Interfaces.csproj.CopyComplete
+/Users/omegajohn/Documents/C#/CREDID/Interfaces/obj/Debug/net6.0/Interfaces.dll
+/Users/omegajohn/Documents/C#/CREDID/Interfaces/obj/Debug/net6.0/refint/Interfaces.dll
+/Users/omegajohn/Documents/C#/CREDID/Interfaces/obj/Debug/net6.0/Interfaces.pdb
+/Users/omegajohn/Documents/C#/CREDID/Interfaces/obj/Debug/net6.0/ref/Interfaces.dll
