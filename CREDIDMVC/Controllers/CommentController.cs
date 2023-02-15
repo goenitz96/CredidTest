@@ -17,4 +17,9 @@ public class CommentController : Controller
         var data = await _commentService.getComments();
         return View(data);
     }
+    
+    public async Task<IActionResult> Search(string name, string body)
+    {
+        return View(await _commentService.searchByNameOrBody(name, body));
+    }
 }

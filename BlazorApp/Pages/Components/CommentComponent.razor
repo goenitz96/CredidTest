@@ -1,0 +1,61 @@
+@page "/comments"
+@inject ICommentService CommentService
+
+
+<div class="container mb-3">
+    <MudTable Elevation="5" Items="@comments" Hover="true" Bordered="true" Striped="true" 
+         Filter="new Func<Comment, bool>(Filtering)" @ref="paging" RowsPerPage="10">
+        <ToolBarContent>
+            <MudText Typo="Typo.h6">Comments</MudText>
+            <MudSpacer />
+            <MudTextField @bind-Value="txtSearch" Placeholder="Search" Adornment="Adornment.Start" AdornmentIcon="@Icons.Material.Filled.Search" IconSize="Size.Medium" Class="mt-0"></MudTextField>
+        </ToolBarContent>
+        <HeaderContent>
+            <MudTh>Name</MudTh>
+            <MudTh>Email</MudTh>
+            <MudTh>Body</MudTh>
+        </HeaderContent>
+        <RowTemplate>
+            <MudTd DataLabel="Nr">@context.name</MudTd>
+            <MudTd DataLabel="Sign">@context.email</MudTd>
+            <MudTd DataLabel="Name">@context.body</MudTd>
+        </RowTemplate>
+        <PagerContent>
+            <div class="d-flex justify-content-end align-content-end">
+                <MudPagination SelectedChanged="PageChanged" Class="pa-4" ShowFirstButton="true" ShowLastButton="true"
+                Count="@((paging.GetFilteredItemsCount() + paging.RowsPerPage - 1) / paging.RowsPerPage)"></MudPagination>
+            </div>
+        </PagerContent>
+    </MudTable>
+</div>
+
+@code {
+    private IEnumerable<Comment> comments = new List<Comment>();
+    private MudTable<Comment> paging;
+    private string txtSearch = string.Empty;
+    
+    protected override async Task OnInitializedAsync()
+    {
+        comments = await CommentService.getComments();
+    }
+
+    private bool Filtering(Comment comment) => FilterFunc(comment, txtSearch);
+    
+    private bool FilterFunc(Comment comment, string searchString)
+    {
+        if (string.IsNullOrWhiteSpace(searchString))
+            return true;
+        if (comment.name.Contains(searchString, StringComparison.OrdinalIgnoreCase))
+            return true;
+        if (comment.body.Contains(searchString, StringComparison.OrdinalIgnoreCase))
+            return true;
+        if ($"{comment.name} {comment.body}".Contains(searchString))
+            return true;
+        return false;
+    }
+    
+    private void PageChanged(int page)
+    {
+        paging.NavigateTo(page - 1);
+    }
+}

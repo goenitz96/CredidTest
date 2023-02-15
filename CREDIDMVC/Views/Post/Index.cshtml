@@ -43,12 +43,12 @@
     <script >
         $("#textSearch").on("keyup", function() {
           let text = $(this).val();
-          $("table tr").each(function (result){
+          $("table tr").filter(function (result){
               if (result !== 0){
                   let title = $(this).find("td:nth-child(1)").text();
                   let body = $(this).find("td:nth-child(2)").text();
-                    if (title.indexOf(text) !== 0 && title.toLowerCase().indexOf(text.toLowerCase()) < 0
-                    || body.indexOf(text) !== 0 && body.toLowerCase().indexOf(text.toLowerCase()) < 0){
+                    if (title.indexOf(text) !== 0 && title.toLowerCase().indexOf(text.toLowerCase()) < 0 ||
+                    body.indexOf(text) !== 0 && body.toLowerCase().indexOf(text.toLowerCase()) < 0){
                         $(this).hide();
                     } else {
                         $(this).show();

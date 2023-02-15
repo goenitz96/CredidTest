@@ -32,4 +32,14 @@ public class CommentService : ICommentService
             }).ToList();
         return body;
     }
+
+    public async Task<IEnumerable<Comment>> searchByNameOrBody(string name, string body)
+    {
+        var data = await getComments();
+        if (!string.IsNullOrEmpty(name))
+            data = data.Where(x => x.name!.Contains(name));
+        if (!string.IsNullOrEmpty(body))
+            data = data.Where(x => x.body!.Contains(body));
+        return data;
+    }
 }

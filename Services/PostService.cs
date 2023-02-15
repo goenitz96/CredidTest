@@ -25,7 +25,10 @@ public class PostService : IPostService
         var json = JsonConvert.SerializeObject(response);
         var data = JsonConvert.DeserializeObject<IEnumerable<Post>>(json);
         var body = data.Select(x => 
-            new Post() { body = CultureInfo.InvariantCulture.TextInfo.ToTitleCase(x.body), title = x.title}).ToList();
+            new Post()
+            {
+                body = CultureInfo.InvariantCulture.TextInfo.ToTitleCase(x.body), title = x.title
+            }).ToList();
         return body;
     }
 }
